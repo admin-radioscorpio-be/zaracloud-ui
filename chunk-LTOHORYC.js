@@ -1,0 +1,41 @@
+import{b as F}from"./chunk-UFTR7SYY.js";import{Aa as i,Bc as w,E as S,Eb as b,H as o,Ha as f,Ra as e,Sa as c,Ta as s,Wd as T,ca as l,da as E,ga as u,hd as y,i as p,id as _,la as m,nb as v,oa as d,ob as g,q as h,ub as C,xc as D,yc as I,za as t}from"./chunk-B34ZBDND.js";import"./chunk-Q7L6LLAK.js";var j=(()=>{class r{constructor(n,a){this.http=n,this.router=a,this.apiUrl="https://zaracloud.radioscorpio.be/api/scheduler/status",this.authRedirectUrl="https://zaracloud.radioscorpio.be/api/login"}getSchedulerData(){return this.http.get(this.apiUrl).pipe(h(n=>this.handleError(n)))}handleError(n){return n.status===401&&(console.warn("Unauthorized (401) - Redirecting to login..."),window.location.href=this.authRedirectUrl),p(()=>new Error(n.message))}static{this.\u0275fac=function(a){return new(a||r)(o(C),o(b))}}static{this.\u0275prov=S({token:r,factory:r.\u0275fac,providedIn:"root"})}}return r})();function H(r,x){if(r&1&&(t(0,"li")(1,"strong"),e(2),i(),e(3," - "),t(4,"span"),e(5),i()()),r&2){let n=x.$implicit;l(2),c(n.event.name),l(3),c(n.timestamp_iso)}}function M(r,x){if(r&1&&(t(0,"div")(1,"h3"),e(2,"--- Event Metadata"),i(),t(3,"p"),e(4),i(),t(5,"p"),e(6),i(),t(7,"h3"),e(8,"--- Events"),i(),t(9,"ul"),m(10,H,6,2,"li",8),i()()),r&2){let n=f();l(4),s("Size: ",n.schedulerData.event_meta.size,""),l(2),s("Tag: ",n.schedulerData.event_meta.tag,""),l(4),d("ngForOf",n.events)}}var Q=(()=>{class r{constructor(n){this.schedulerService=n,this.events=[]}ngOnInit(){this.schedulerService.getSchedulerData().subscribe({next:n=>{this.schedulerData=n,this.events=n.events,console.log(n)},error:n=>console.error("Error fetching scheduler data",n)})}static{this.\u0275fac=function(a){return new(a||r)(E(j))}}static{this.\u0275cmp=u({type:r,selectors:[["scheduler-tables"]],decls:86,vars:1,consts:[["xs","12"],[1,"mb-4"],["href","components/table/scheduler"],["cTable",""],["scope","col"],["scope","row"],["colSpan","2"],[4,"ngIf"],[4,"ngFor","ngForOf"]],template:function(a,z){a&1&&(t(0,"h1"),e(1,"Scheduler"),i(),t(2,"c-row"),e(3,`
+  `),t(4,"c-col",0),e(5,`
+    `),t(6,"c-card",1),e(7,`
+      `),t(8,"c-card-header"),e(9,`
+      `),i(),e(10,`
+      `),t(11,"c-card-body"),e(12,`
+        `),t(13,"app-docs-example",2),e(14,`
+          `),t(15,"table",3),e(16,`
+            `),t(17,"thead"),e(18,`
+            `),t(19,"tr"),e(20,`
+              `),t(21,"th",4),e(22,"#"),i(),e(23,`
+              `),t(24,"th",4),e(25,"Class"),i(),e(26,`
+              `),t(27,"th",4),e(28,"Heading"),i(),e(29,`
+              `),t(30,"th",4),e(31,"Heading"),i(),e(32,`
+            `),i(),e(33,`
+            `),i(),e(34,`
+            `),t(35,"tbody"),e(36,`
+            `),t(37,"tr"),e(38,`
+              `),t(39,"th",5),e(40,"1"),i(),e(41,`
+              `),t(42,"td"),e(43,"Mark"),i(),e(44,`
+              `),t(45,"td"),e(46,"Otto"),i(),e(47,`
+              `),t(48,"td"),e(49,"@mdo"),i(),e(50,`
+            `),i(),e(51,`
+            `),t(52,"tr"),e(53,`
+              `),t(54,"th",5),e(55,"2"),i(),e(56,`
+              `),t(57,"td"),e(58,"Jacob"),i(),e(59,`
+              `),t(60,"td"),e(61,"Thornton"),i(),e(62,`
+              `),t(63,"td"),e(64,"@fat"),i(),e(65,`
+            `),i(),e(66,`
+            `),t(67,"tr"),e(68,`
+              `),t(69,"th",5),e(70,"3"),i(),e(71,`
+              `),t(72,"td",6),e(73,"Larry the Bird"),i(),e(74,`
+              `),t(75,"td"),e(76,"@twitter"),i(),e(77,`
+            `),i(),e(78,`
+            `),i(),e(79,`
+          `),i(),e(80,`
+        `),i(),e(81,`
+      `),i(),e(82,`
+    `),i(),e(83,`
+  `),i(),e(84,`
+`),i(),m(85,M,11,3,"div",7)),a&2&&(l(85),d("ngIf",z.schedulerData))},dependencies:[g,v,_,y,D,w,I,F,T],encapsulation:2})}}return r})();export{Q as SchedulerComponent};
