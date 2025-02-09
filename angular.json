@@ -112,10 +112,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-              "baseHref": "/"
-          }
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
