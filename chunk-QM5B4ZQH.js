@@ -1,0 +1,41 @@
+import{b as p}from"./chunk-GFBLVIBQ.js";import{Aa as n,Ac as a,Ra as t,Vd as c,ga as m,gd as d,hd as x,wc as r,xc as o,za as e}from"./chunk-STGUYYKN.js";import"./chunk-Q7L6LLAK.js";var u=(()=>{class i{constructor(){}static{this.\u0275fac=function(l){return new(l||i)}}static{this.\u0275cmp=m({type:i,selectors:[["log-tables"]],decls:85,vars:0,consts:[["xs","12"],[1,"mb-4"],["href","components/table/log"],["cTable",""],["scope","col"],["scope","row"],["colSpan","2"]],template:function(l,S){l&1&&(e(0,"h1"),t(1,"Log"),n(),e(2,"c-row"),t(3,`
+  `),e(4,"c-col",0),t(5,`
+    `),e(6,"c-card",1),t(7,`
+      `),e(8,"c-card-header"),t(9,`
+      `),n(),t(10,`
+      `),e(11,"c-card-body"),t(12,`
+        `),e(13,"app-docs-example",2),t(14,`
+          `),e(15,"table",3),t(16,`
+            `),e(17,"thead"),t(18,`
+            `),e(19,"tr"),t(20,`
+              `),e(21,"th",4),t(22,"#"),n(),t(23,`
+              `),e(24,"th",4),t(25,"Class"),n(),t(26,`
+              `),e(27,"th",4),t(28,"Heading"),n(),t(29,`
+              `),e(30,"th",4),t(31,"Heading"),n(),t(32,`
+            `),n(),t(33,`
+            `),n(),t(34,`
+            `),e(35,"tbody"),t(36,`
+            `),e(37,"tr"),t(38,`
+              `),e(39,"th",5),t(40,"1"),n(),t(41,`
+              `),e(42,"td"),t(43,"Mark"),n(),t(44,`
+              `),e(45,"td"),t(46,"Otto"),n(),t(47,`
+              `),e(48,"td"),t(49,"@mdo"),n(),t(50,`
+            `),n(),t(51,`
+            `),e(52,"tr"),t(53,`
+              `),e(54,"th",5),t(55,"2"),n(),t(56,`
+              `),e(57,"td"),t(58,"Jacob"),n(),t(59,`
+              `),e(60,"td"),t(61,"Thornton"),n(),t(62,`
+              `),e(63,"td"),t(64,"@fat"),n(),t(65,`
+            `),n(),t(66,`
+            `),e(67,"tr"),t(68,`
+              `),e(69,"th",5),t(70,"3"),n(),t(71,`
+              `),e(72,"td",6),t(73,"Larry the Bird"),n(),t(74,`
+              `),e(75,"td"),t(76,"@twitter"),n(),t(77,`
+            `),n(),t(78,`
+            `),n(),t(79,`
+          `),n(),t(80,`
+        `),n(),t(81,`
+      `),n(),t(82,`
+    `),n(),t(83,`
+  `),n(),t(84,`
+`),n())},dependencies:[x,d,r,a,o,p,c],encapsulation:2})}}return i})();export{u as LogComponent};
