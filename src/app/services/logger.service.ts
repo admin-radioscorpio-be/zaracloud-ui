@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { SchedulerResponse } from '../models/event.model';
+import { Track } from '../models/track.model';
 
 
 @Injectable({
   providedIn: 'root',
 })
-export class SchedulerService {
-  private apiUrl = 'https://zaracloud.radioscorpio.be/api/scheduler/status'; // Replace with actual API URL
+export class LoggerService {
+  private apiUrl = 'https://zaracloud.radioscorpio.be/api/tracklogger/status'; // Replace with actual API URL
 
   private authRedirectUrl = 'https://zaracloud.radioscorpio.be/api/login'; // Replace with your authentication URL
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getSchedulerData(): Observable<SchedulerResponse> {
+  getLoggerData(): Observable<Track[]> {
     return this.http
-      .get<SchedulerResponse>(this.apiUrl)
+      .get<Track[]>(this.apiUrl)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
