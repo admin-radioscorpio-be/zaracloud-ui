@@ -1,0 +1,27 @@
+import{b as Q}from"./chunk-W6EE3F42.js";import{Qb as k,a as C,bb as I,cb as w,k as _,ra as b,sa as D,va as y}from"./chunk-ASRPS2K4.js";import{A as x,Ab as m,Kb as s,Vb as i,Wb as n,Z as f,ca as c,dd as g,ec as E,ed as S,fb as a,gb as h,m as u,rc as e,sc as p,tb as v,tc as d}from"./chunk-TA7IZMCV.js";import"./chunk-Q7L6LLAK.js";var T=(()=>{class r{constructor(t,o){this.http=t,this.router=o,this.apiUrl="/api/playqueue/status",this.authRedirectUrl="/api/login"}getQueueData(){return this.http.get(this.apiUrl).pipe(x(t=>this.handleError(t)))}handleError(t){return t.status===401&&(console.warn("Unauthorized (401) - Redirecting to login..."),window.location.href=this.authRedirectUrl),u(()=>new Error(t.message))}static{this.\u0275fac=function(o){return new(o||r)(c(C),c(_))}}static{this.\u0275prov=f({token:r,factory:r.\u0275fac,providedIn:"root"})}}return r})();function R(r,l){if(r&1&&(i(0,"tr"),e(1,`
+                `),i(2,"th",7),e(3),n(),e(4,`
+                `),i(5,"td"),e(6),n(),e(7,`
+              `),n()),r&2){let t=l.$implicit,o=l.index;a(3),p(o+1),a(3),p(t.data.filename)}}function U(r,l){if(r&1&&(i(0,"div")(1,"p"),e(2),n(),i(3,"p"),e(4),n(),i(5,"c-row"),e(6,`
+    `),i(7,"c-col",1),e(8,`
+      `),i(9,"c-card",2),e(10,`
+        `),i(11,"c-card-header"),e(12,`
+        `),n(),e(13,`
+        `),i(14,"c-card-body"),e(15,`
+          `),i(16,"app-docs-example",3),e(17,`
+            `),i(18,"table",4),e(19,`
+              `),i(20,"thead"),e(21,`
+              `),i(22,"tr"),e(23,`
+                `),i(24,"th",5),e(25,"#"),n(),e(26,`
+                `),i(27,"th",5),e(28,"Track"),n(),e(29,`
+              `),n(),e(30,`
+              `),n(),e(31,`
+              `),i(32,"tbody"),e(33,`
+              `),m(34,R,8,2,"tr",6),e(35,`
+              
+              `),n(),e(36,`
+            `),n(),e(37,`
+          `),n(),e(38,`
+        `),n(),e(39,`
+      `),n(),e(40,`
+    `),n(),e(41,`
+  `),n()()),r&2){let t=E();a(2),d("Size: ",t.queueData.length,""),a(2),d("Currently playing : ",t.current_track.data.filename,""),a(30),s("ngForOf",t.tracks)}}var P=(()=>{class r{constructor(t){this.queueService=t,this.tracks=[],this.current_track={data:{fade_duration:0,filename:"",prefix:""},name:"",next:""}}ngOnInit(){this.queueService.getQueueData().subscribe({next:t=>{this.queueData=t,this.current_track=t.current,this.tracks=t.first_10_tracks,console.log("Beire"),console.log(t),console.log("Queue")},error:t=>console.error("Error fetching scheduler data",t)})}static{this.\u0275fac=function(o){return new(o||r)(h(T))}}static{this.\u0275cmp=v({type:r,selectors:[["queue-tables"]],decls:3,vars:1,consts:[[4,"ngIf"],["xs","12"],[1,"mb-4"],["href","components/table/queue"],["cTable",""],["scope","col"],[4,"ngFor","ngForOf"],["scope","row"]],template:function(o,q){o&1&&(i(0,"h1"),e(1,"Queue"),n(),m(2,U,42,3,"div",0)),o&2&&(a(2),s("ngIf",q.queueData))},dependencies:[g,S,w,I,b,y,D,Q,k],encapsulation:2})}}return r})();export{P as QueueComponent};
