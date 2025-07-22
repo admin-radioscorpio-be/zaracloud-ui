@@ -1,0 +1,18 @@
+.settings {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .setting {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+}
+
+
+hr {
+  border: 1px solid var(--p-surface-200);
+  margin: 0.25rem 0;
+}

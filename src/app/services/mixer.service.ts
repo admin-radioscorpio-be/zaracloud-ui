@@ -9,9 +9,9 @@ import { MixerStatus } from '../models/mixer.model';
   providedIn: 'root',
 })
 export class MixerService {
-  private apiUrl = 'https://zaracloud.radioscorpio.be/api/mixer/status'; // Replace with actual API URL
+  private apiUrl = '/api/mixer/status'; // Replace with actual API URL
 
-  private authRedirectUrl = 'https://zaracloud.radioscorpio.be/api/login'; // Replace with your authentication URL
+  private authRedirectUrl = '/api/login'; // Replace with your authentication URL
 
   constructor(private http: HttpClient, private router: Router) {}
 

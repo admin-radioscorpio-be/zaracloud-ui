@@ -31,6 +31,14 @@ export const routes: Routes = [
     }
   },
   {
+    path: 'explorer',
+   // loadComponent: () => import('./zzz-voyage/zzz-voyage/src/public-api').then(m => m.ZzzVoyageComponent),
+    loadComponent: () => import('./explorer/explorer.component').then(m => m.ExplorerComponent),
+    data: {
+      title: 'Explorer'
+    }
+  },
+  {
     path: '',
     data: {
       title: 'Base'
@@ -62,6 +70,13 @@ export const routes: Routes = [
         loadComponent: () => import('./log/log.component').then(m => m.LogComponent),
         data: {
           title: 'Log'
+        }
+      },
+      {
+        path: 'explorer',
+        loadComponent: () => import('./explorer/explorer.component').then(m => m.ExplorerComponent),
+        data: {
+          title: 'Explorer'
         }
       },
       

@@ -9,17 +9,20 @@ import { Track } from '../models/track.model';
   providedIn: 'root',
 })
 export class LoggerService {
-  private apiUrl = 'https://zaracloud.radioscorpio.be/api/tracklogger/status'; // Replace with actual API URL
+  private apiUrl = '/api/tracklogger/status'; // Replace with actual API URL
 
-  private authRedirectUrl = 'https://zaracloud.radioscorpio.be/api/login'; // Replace with your authentication URL
+  private authRedirectUrl = '/api/login'; // Replace with your authentication URL
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getLoggerData(): Observable<Track[]> {
+  getLoggerData(logDate?: string): Observable<Track[]> {
+
+    const body = logDate ? { logdate: logDate } : {}; // Only include logdate if it's provided
+
     return this.http
-      .get<Track[]>(this.apiUrl)
-      .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
-  }
+    .post<Track[]>(this.apiUrl, body) // Change GET to POST
+    .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
+}
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     if (error.status === 401) {

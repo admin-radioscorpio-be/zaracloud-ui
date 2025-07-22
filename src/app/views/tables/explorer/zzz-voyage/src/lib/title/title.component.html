@@ -1,0 +1,103 @@
+<div class="title">
+  <div class="nav-buttons">
+    <p-button
+      icon="pi"
+      text="true"
+      severity="secondary"
+      (click)="onBack()"
+      [disabled]="backButtonDisabled()"
+    >
+      <zzz-voyage-icon type="chevron-left"></zzz-voyage-icon>
+    </p-button>
+    <p-button
+      icon="pi"
+      text="true"
+      severity="secondary"
+      (click)="onForward()"
+      [disabled]="forwardButtonDisabled()"
+    >
+      <zzz-voyage-icon type="chevron-right"></zzz-voyage-icon>
+    </p-button>
+  </div>
+
+  <div class="path">
+    @for (fragment of pathFragments(); track fragment; let isLast = $last) {
+      <p-button
+        (onClick)="navigate.emit(fragment.path)"
+        variant="text"
+        data-testid="title-fragment"
+      >
+        @if (fragment.path === "/") {
+          <zzz-voyage-icon type="desktop"></zzz-voyage-icon>
+        } @else {
+          <span class="fragment">{{ fragment.name }}</span>
+        }
+      </p-button>
+      @if (!isLast) {
+        <span class="separator">/</span>
+      }
+    }
+
+    @if (pathIsBookmarked()) {
+      <p-button
+        variant="text"
+        class="bookmark bookmarked"
+        (onClick)="bookmarksPopover.toggle($event)"
+        data-testid="edit-bookmark"
+      >
+        <zzz-voyage-icon type="star-solid"></zzz-voyage-icon>
+      </p-button>
+    } @else if (path() !== "/") {
+      <p-button
+        variant="text"
+        class="bookmark"
+        (onClick)="onAddBookmark($event)"
+        data-testid="add-bookmark"
+      >
+        <zzz-voyage-icon type="star"></zzz-voyage-icon>
+      </p-button>
+    } @else {
+      <div class="no-bookmark"></div>
+    }
+    <div class="justify-anchor-small"></div>
+  </div>
+
+  <p-selectbutton
+    [options]="viewOptions"
+    [ngModel]="selectedView()"
+    (ngModelChange)="setSelectedView($event.type)"
+    allowEmpty="false"
+    size="small"
+    class="view-select-button"
+  >
+    <ng-template #item let-item>
+      <zzz-voyage-icon
+        [attr.data-testid]="'select-view-' + item.type"
+        [type]="item.icon"
+        class="view-icons"
+      ></zzz-voyage-icon>
+    </ng-template>
+  </p-selectbutton>
+
+  <p-button
+    (click)="settingsPopover.toggle($event)"
+    icon="pi"
+    text="true"
+    severity="secondary"
+    class="bars-button"
+    data-testid="settings-menu-button"
+  >
+    <zzz-voyage-icon type="bars"></zzz-voyage-icon>
+  </p-button>
+</div>
+
+<p-popover #settingsPopover>
+  <zzz-voyage-settings></zzz-voyage-settings>
+</p-popover>
+
+<p-popover #bookmarksPopover>
+  <zzz-voyage-edit-bookmark
+    [bookmark]="bookmark()"
+    (done)="bookmarksPopover.hide()"
+  ></zzz-voyage-edit-bookmark>
+</p-popover>

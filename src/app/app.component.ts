@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log("ZaraCloud 1.0.0");
     this.#router.events.pipe(
         takeUntilDestroyed(this.#destroyRef)
       ).subscribe((evt) => {

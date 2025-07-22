@@ -1,0 +1,43 @@
+<div
+  class="view"
+  data-testid="grid-view"
+  (keydown)="onKeydown($event)"
+  role="region"
+  [pAutoFocus]="true"
+  tabindex="0"
+>
+  @for (file of sortedFiles(); track file.name; let index = $index) {
+    <div
+      class="item"
+      [ngClass]="{
+        active: isSelectedFile(file),
+        'hidden-file': file.name.startsWith('.'),
+      }"
+      (dblclick)="onDoubleClick(file)"
+      (mousedown)="onMouseDown($event)"
+      (contextmenu)="onContextMenu($event, file)"
+      (click)="selectedFile.set(file)"
+      (keypress.enter)="onDoubleClick(file)"
+      [tabindex]="0"
+      [attr.data-fileIndex]="index"
+    >
+      @if (file.isDirectory) {
+        <zzz-voyage-icon type="folder"></zzz-voyage-icon>
+      } @else {
+        <zzz-voyage-icon [type]="getFileIcon(file)"></zzz-voyage-icon>
+      }
+      <div class="name" data-testid="files-grid-name">{{ file.name }}</div>
+    </div>
+  }
+
+  <p-contextmenu #contextMenu [model]="menuItems"></p-contextmenu>
+
+  @let data = previewData();
+  @if (showPreview() && data) {
+    <zzz-voyage-preview
+      [name]="selectedFile()?.name ?? ''"
+      [data]="data"
+      (closed)="showPreview.set(false)"
+    ></zzz-voyage-preview>
+  }
+</div>

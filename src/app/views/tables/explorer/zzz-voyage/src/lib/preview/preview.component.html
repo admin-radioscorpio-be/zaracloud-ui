@@ -1,0 +1,19 @@
+<div class="preview">
+  <div class="topbar">
+    <p-button (onClick)="closed.emit()">
+      <zzz-voyage-icon type="xmark"></zzz-voyage-icon>
+      {{ "CLOSE" | translate }}
+    </p-button>
+    <h1>{{ name() }}</h1>
+  </div>
+
+  <div class="content">
+    @if (isPdf()) {
+      <zzz-voyage-pdf [data]="data()"></zzz-voyage-pdf>
+    } @else if (isImage()) {
+      <zzz-voyage-img [data]="data()"></zzz-voyage-img>
+    } @else if (isText()) {
+      <zzz-voyage-text [data]="data()" [name]="name()"></zzz-voyage-text>
+    }
+  </div>
+</div>
